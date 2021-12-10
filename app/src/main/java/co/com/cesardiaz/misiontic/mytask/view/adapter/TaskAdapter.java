@@ -1,4 +1,4 @@
-package co.com.cesardiaz.misiontic.mytask;
+package co.com.cesardiaz.misiontic.mytask.view.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import co.com.cesardiaz.misiontic.mytask.R;
+import co.com.cesardiaz.misiontic.mytask.view.dto.TaskItem;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     private List<TaskItem> data;
@@ -33,7 +36,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_task, parent);
+                .inflate(R.layout.item_task, parent, false);
 
         return new ViewHolder(view);
     }

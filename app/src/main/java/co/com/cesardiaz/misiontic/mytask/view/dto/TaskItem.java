@@ -1,4 +1,4 @@
-package co.com.cesardiaz.misiontic.mytask;
+package co.com.cesardiaz.misiontic.mytask.view.dto;
 
 public class TaskItem {
     private String description;
@@ -12,18 +12,22 @@ public class TaskItem {
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public String getDate() {
+
         return date;
     }
 
-    public TaskState getState() {
+    public TaskState getState()
+    {
         return state;
     }
 
-    public void setState(TaskState state) {
+    public void setState(TaskState state)
+    {
         this.state = state;
     }
 }
