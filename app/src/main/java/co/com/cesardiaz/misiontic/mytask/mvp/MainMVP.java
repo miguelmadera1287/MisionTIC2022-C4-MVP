@@ -9,6 +9,8 @@ public interface MainMVP {
     interface Model {
 
         List<TaskItem> getTasks();
+
+        void saveTask(TaskItem task);
     }
     
     interface Presenter {
@@ -22,6 +24,10 @@ public interface MainMVP {
     interface View {
 
         void showTaskList(List<TaskItem> items);
+
+        void addTaskList(TaskItem task);
+
+        String getTaskDescription();
     }
     
     

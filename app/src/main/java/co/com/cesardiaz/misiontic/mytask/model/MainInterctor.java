@@ -19,4 +19,9 @@ public class MainInterctor implements MainMVP.Model {
     public List<TaskItem> getTasks() {
         return tempItems;
     }
+
+    @Override
+    public void saveTask(TaskItem task) {
+        tempItems.add(task);
+    }
 }

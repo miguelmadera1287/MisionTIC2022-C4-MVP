@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import co.com.cesardiaz.misiontic.mytask.R;
@@ -41,10 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
     private void initUI() {
         tilNewTask = findViewById(R.id.til_new_task);
-        tilNewTask.setEndIconOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, "Add new task to list", Toast.LENGTH_SHORT)
-                    .show();
-        });
+        tilNewTask.setEndIconOnClickListener(v -> presenter.addNewTask());
 
         etNewTask = findViewById(R.id.et_new_task);
 
@@ -57,5 +55,18 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
     @Override
     public void showTaskList(List<TaskItem> items) {
         taskAdapter.setData(items);
+    }
+
+    @Override
+    public void addTaskList(TaskItem task) {
+        taskAdapter.addItem(task);
+    }
+
+    @Override
+    public String getTaskDescription() {
+        return etNewTask.getText().toString();
+
+        String description;
+        TaskItem task = new TaskItem(description, SimpleDateFormat);
     }
 }
